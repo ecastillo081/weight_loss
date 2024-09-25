@@ -11,7 +11,7 @@ activity_level = 'sedentary'
 workout_minutes = 15
 workout_intensity = 5
 
-# Update the weight_loss_calculator function to return a DataFrame
+# setup
 def weight_loss_calculator_df(start_weight, end_weight, height, age, gender, goal_date, activity_level, workout_minutes,
                               workout_intensity):
     # activity multipliers
@@ -22,7 +22,7 @@ def weight_loss_calculator_df(start_weight, end_weight, height, age, gender, goa
         "active": 1.725,
     }
 
-    # height to centimeters and weight to kilograms
+    # height to centimeters and weight to kilo
     height_cm = height * 2.54  # inches to cm
     start_weight_kg = start_weight / 2.205  # lbs to kg
 
@@ -56,8 +56,6 @@ def weight_loss_calculator_df(start_weight, end_weight, height, age, gender, goa
 
     return pd.DataFrame(data)
 
-
-# Calculate weight loss plan
 df_weight_loss = weight_loss_calculator_df(start_weight, end_weight, height, age, gender, goal_date, activity_level,
                                        workout_minutes, workout_intensity)
 
